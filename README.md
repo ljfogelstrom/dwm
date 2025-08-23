@@ -1,6 +1,6 @@
 # dwm
 
-My build of dwm.
+My build of [dwm](suckless.org/dwm).
 
 Features:
 - Improved tagbar layout
