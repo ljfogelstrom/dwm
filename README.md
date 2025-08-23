@@ -3,10 +3,10 @@
 My build of dwm.
 
 Features:
-    - Improved tagbar layout
-    - Additional statusbar colorscheme
-    - Transparent windows
-    - Vanity gaps
-    - Ubuntu Mono
+- Improved tagbar layout
+- Additional statusbar colorscheme
+- Transparent windows
+- Vanity gaps
+- Ubuntu Mono
 
 Enjoy!
