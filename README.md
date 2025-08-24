@@ -12,7 +12,8 @@ Features:
 Enjoy!
 
 ### Install
-
-`git clone https://github.com/ljfogelstrom/dwm\
-cd dwm\
-sudo make install`
+```
+git clone https://github.com/ljfogelstrom/dwm
+cd dwm
+sudo make install
+```
