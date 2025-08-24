@@ -719,14 +719,14 @@ drawbar(Monitor *m)
 		return;
 
 	int x = 0, y = 0, w, tw = 0;
-	int boxs = drw->fonts->h / 9;
-	int boxw = drw->fonts->h / 6 + 2;
+	    /* int boxs = drw->fonts->h / 9;
+		int boxw = drw->fonts->h / 6 + 2; */
 	unsigned int i, occ = 0, urg = 0;
 	Client *c;
 
 	w = TEXTW(m->ltsymbol);
 	drw_setscheme(drw, scheme[SchemeNorm]);
-	x = drw_text(drw, x, y, w, bh, lrpad / 2, m->ltsymbol, 0); /* horizontal position is updated to the end of the tag symbol (PRESUMABLY) */
+	x = drw_text(drw, x, y, w, bh, lrpad / 2, m->ltsymbol, 0); /* horizontal position is updated to the end of the tag symbol */
 
 	for (c = m->clients; c; c = c->next) {
 		occ |= c->tags == TAGMASK ? 0 : c->tags;
@@ -755,27 +755,11 @@ drawbar(Monitor *m)
 		tw = TEXTW(stext) - lrpad + 4; /* 2px padding */
 		drw_text(drw, m->ww - tw, y, tw, bh, 2, stext, 0);
 	}
-#if 0
-	if ((w = m->ww - tw - x) > bh) { /* width is assigned as the remainder of the window width after subtracting the width of the tag and status areas */
-		if (m->sel) { /* there is a selected client */               
-            int cw = TEXTW(m->sel->name);
-			drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
-			int xpost = drw_text(drw, x, y, cw, bh, lrpad / 2, m->sel->name, 0); /* drw_text() draws colors by default */
-            drw_setscheme(drw, scheme[SchemeNorm]);
-            drw_rect(drw, xpost, y, w - cw, bh, 1, 1);
-			if (m->sel->isfloating)
-				drw_rect(drw, x + boxs, boxs, boxw, boxw, m->sel->isfixed, 0);
-		} else {
-			drw_setscheme(drw, scheme[SchemeNorm]);
-			drw_rect(drw, x, y, w, bh, 1, 1);
-		}
-	}
-#endif
 	drw_map(drw, m->barwin, 0, y, m->ww, bh);
 }
 
 void
-drawbars(void) /* helper function to draw active monitors (???) */
+drawbars(void)
 {
 	Monitor *m;
 

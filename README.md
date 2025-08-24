@@ -10,3 +10,9 @@ Features:
 - Ubuntu Mono
 
 Enjoy!
+
+### Install
+
+`git clone https://github.com/ljfogelstrom/dwm\
+cd dwm\
+sudo make install`
